@@ -9,7 +9,7 @@ def main():
     bme280 = cgsensor.BME280(i2c_addr=0x76)
     bme280.forced()
     result["温度"] = bme280.temperature
-    result["室温"] = bme280.humidity
+    result["湿度"] = bme280.humidity
     result["気圧"] = bme280.pressure
 
     tsl2572 = cgsensor.TSL2572()
