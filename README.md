@@ -16,4 +16,3 @@ sudo pip install cgsensor mh-z19
 ```bash
 sudo python sensor.py
 ```
-
