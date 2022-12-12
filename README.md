@@ -4,7 +4,7 @@
 
 ```bash
 ./setup.sh
-sudo pip install cgsensor mh-z19
+sudo pip install cgsensor mh-z19 python-dotenv requests
 ```
 
 ## Sensor
@@ -15,4 +15,12 @@ sudo pip install cgsensor mh-z19
 
 ```bash
 sudo python sensor.py
+```
+
+## Send sensor value
+
+Use crontab.
+
+```bash
+* * * * *  cd /home/mjun/workspace/raspi && /usr/bin/python cron.py
 ```
