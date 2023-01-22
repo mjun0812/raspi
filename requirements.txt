@@ -1,0 +1,4 @@
+cgsensor
+mh-z19
+python-dotenv
+requests

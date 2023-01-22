@@ -4,7 +4,6 @@
 
 ```bash
 ./setup.sh
-sudo pip install cgsensor mh-z19 python-dotenv requests
 ```
 
 ## Sensor
