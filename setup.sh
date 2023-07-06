@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt update && sudo apt install -y vim
+sudo apt update && sudo apt install -y vim pip
 
 sudo pip install -r requirements.txt
 
