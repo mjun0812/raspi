@@ -1,4 +1,5 @@
 import os
+
 import cgsensor
 import mh_z19
 import requests
@@ -10,9 +11,9 @@ def get_sensor_info():
 
     bme280 = cgsensor.BME280(i2c_addr=0x76)
     bme280.forced()
-    result["temp"] = bme280.temperature
-    result["humid"] = bme280.humidity
-    result["pressure"] = bme280.pressure
+    result["temperature"] = bme280.temperature
+    result["humidity"] = bme280.humidity
+    result["air_pressure"] = bme280.pressure
 
     tsl2572 = cgsensor.TSL2572()
     tsl2572.single_auto_measure()
