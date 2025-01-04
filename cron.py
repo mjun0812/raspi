@@ -3,6 +3,8 @@ import os
 import cgsensor
 import mh_z19
 import requests
+from requests.auth import HTTPBasicAuth
+from requests.exceptions import Timeout
 from dotenv import load_dotenv
 
 
@@ -26,8 +28,18 @@ def get_sensor_info():
 def main():
     load_dotenv()
     post_url = os.getenv("POST_URL")
-    response = requests.post(post_url, json=get_sensor_info())
-    print(response.status_code)
+    user = os.getenv("BASIC_USER")
+    password = os.getenv("BASIC_PASS")
+    try:
+        response = requests.post(
+            post_url,
+            json=get_sensor_info(),
+            auth=HTTPBasicAuth(username=user, password=password),
+            timeout=(5, 30)
+        )
+        print(response.status_code)
+    except Timeout:
+        print("Timeout")
 
 
 if __name__ == "__main__":

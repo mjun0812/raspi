@@ -21,5 +21,5 @@ sudo python sensor.py
 Use crontab.
 
 ```bash
-* * * * *  cd /home/mjun/workspace/raspi && /usr/bin/python cron.py
+* * * * * for i in `seq 0 5 59`;do (sleep ${i}; cd /home/mjun/raspi; /home/mjun/.venv/bin/python cron.py)& done;
 ```
