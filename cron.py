@@ -52,8 +52,11 @@ def main():
         requests.post(post_url, json=payload, timeout=(5, 30))
     except Timeout:
         print("Timeout")
+        return
     except Exception as e:
         print(f"Error: {e}")
+        return
+    print(payload)
 
 
 if __name__ == "__main__":
