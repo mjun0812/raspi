@@ -16,7 +16,7 @@ def main():
     tsl2572.single_auto_measure()
     result["照度"] = tsl2572.illuminance
 
-    result["CO2"] = mh_z19.read()["co2"]
+    result["CO2"] = mh_z19.read(serial_console_untouched=True)["co2"]
 
     pprint(result)
 

@@ -13,7 +13,7 @@
 - MH-Z19C: CO2
 
 ```bash
-sudo python sensor.py
+uv run python sensor.py
 ```
 
 ## Send sensor value
@@ -21,5 +21,5 @@ sudo python sensor.py
 Use crontab.
 
 ```bash
-* * * * * for i in `seq 0 5 59`;do (sleep ${i}; cd /home/mjun/raspi; /home/mjun/.venv/bin/python cron.py)& done;
+* * * * * for i in `seq 0 20 59`;do (sleep ${i}; cd /home/mjun/raspi; uv run python cron.py)& done;
 ```
