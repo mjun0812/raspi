@@ -21,5 +21,5 @@ uv run python sensor.py
 Use crontab.
 
 ```bash
-* * * * * for i in `seq 0 20 59`;do (sleep ${i}; cd /home/mjun/raspi; uv run python cron.py)& done;
+* * * * * bash -c 'for i in $(seq 0 20 40); do (sleep $i; cd "$HOME/workspace/raspi"; "$HOME/.local/bin/uv" run python cron.py) & done'
 ```
